@@ -8,6 +8,7 @@ defmodule Monitor.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
+      worker(Monitor.Temperature, [])
       # worker(Monitor.Worker, [arg1, arg2, arg3]),
     ]
 
