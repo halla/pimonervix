@@ -33,7 +33,7 @@ defmodule Monitor.Mixfile do
   # applications which could cause the host to fail. Because of this, we only
   # invoke Monitor.start/2 when running on a target.
   def application("host") do
-    [extra_applications: [:logger]]
+    [extra_applications: [:logger, :instream]]
   end
   def application(_target) do
     [mod: {Monitor.Application, []},
@@ -50,7 +50,7 @@ defmodule Monitor.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   def deps do
-    [{:nerves, "~> 0.5.0", runtime: false}] ++
+    [{:nerves, "~> 0.5.0", runtime: false}, { :instream, "~> 0.15" }] ++
     deps(@target)
   end
 

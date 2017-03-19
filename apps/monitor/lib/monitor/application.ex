@@ -8,7 +8,8 @@ defmodule Monitor.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
-      worker(Monitor.Temperature, [])
+      worker(Monitor.Temperature, []),
+      Monitor.InfluxConnection.child_spec
       # worker(Monitor.Worker, [arg1, arg2, arg3]),
     ]
 
