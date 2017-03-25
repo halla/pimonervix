@@ -14,6 +14,7 @@ defmodule Server do
       supervisor(Server.Endpoint, []),
       # Start your own worker by calling: Server.Worker.start_link(arg1, arg2, arg3)
       worker(Monitor.Temperature, []),
+      worker(Monitor.Humidity, []),
       Monitor.InfluxConnection.child_spec
       # worker(Server.Worker, [arg1, arg2, arg3]),
     ]
