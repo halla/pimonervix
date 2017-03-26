@@ -1,0 +1,9 @@
+[Unit]
+Description=pimonervix
+
+[Service]
+ExecStart=/var/www/pimonervix/scripts/start
+User=pi
+
+[Install]
+WantedBy=multi-user.target
